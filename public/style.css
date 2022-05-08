@@ -123,6 +123,6 @@ a, a:visited {
 }
 
 .message:empty::before {
-	content: 'Message room...';
+	content: 'Message server...';
 	opacity: 0.7;
 }

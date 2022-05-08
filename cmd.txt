@@ -4,10 +4,11 @@
 /join [room]
 /msg [user] [message]
 /nick [name]
-/rooms
+/servers
 /users
-/whois [user/#room]<br>OP: /kick [user]
+/whois [user/#server]<br>OP: /kick [user]
 /op [user]
 /deop [user]
 /mute [user]
 /unmute [user]
+/award [user] [award]

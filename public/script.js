@@ -31,7 +31,7 @@ $(document).ready(function () {
 					username = localStorage.getItem('username');
 					client.emit('message', { message: `/nick ${localStorage.getItem('username')}` });
 				}
-				document.title = `Wyvern | ${room}`;
+				document.title = `LunarChat | ${room}`;
 				parseChatLog();
 				break;
 		}
@@ -41,7 +41,7 @@ $(document).ready(function () {
 		appendLog(data);
 		if (!focus) {
 			unread++;
-			document.title = `Wyvern | ${room} (${unread})`;
+			document.title = `LunarChat | ${room} (${unread})`;
 			$('#icon').prop('href', 'images/fav-unread.png');
 		}
 	});
@@ -169,7 +169,7 @@ function days(date) {
 $(window).focus(function () {
 	focus = true;
 	unread = 0;
-	document.title = 'Wyvern | ' + room;
+	document.title = 'LunarChat | ' + room;
 	$('#icon').prop('href', 'images/fav.png');
 }).blur(function () {
 	focus = false;

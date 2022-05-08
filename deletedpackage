@@ -1,0 +1,26 @@
+{
+  "name": "app",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "latest",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.2.0",
+    "express": "latest",
+    "pkg": "^5.5.2",
+    "socket.io": "2.0.3"
+  }
+}
+
+
+
+
+
+      <br>
+      <br>
+      <br>
+      <h6><a href = "https://CloudChat-Documentation.golden0mudkip.repl.co">Documentation</a></h6>

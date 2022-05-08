@@ -119,7 +119,7 @@ io.on('connection', (socket) => {
       
 			socket.emit('message', {
 				name: 'server',
-				message: `You are currently in room "${socket.proto.room}". To join a different room, type /join [room]. Type /help to see more commands`
+				message: `You are currently in "${socket.proto.room}". To join a different server, type /join [server]. Type /help to see more commands`
 			});
 
 			if (query({
@@ -347,6 +347,30 @@ io.on('connection', (socket) => {
 							});
 						}
 						break;
+            					case '/award':
+						selectedSocket = query({
+							name: message.split(' ')[1],
+							room: room
+						}, true);
+						selectedSocket = selectedSocket[Object.keys(selectedSocket)[0]];
+						if (selectedSocket) {
+							socket.to(selectedSocket.proto.id).emit('message', {
+								name: socket.proto.name,
+								message: message.split(' ').slice(2).join(' '),
+								color: socket.proto.id,
+								type: 'direct'
+							});
+							socket.emit('message', {
+								name: 'server',
+								message: `Award sent to ${message.split(' ')[1]}`
+							});
+						} else {
+							socket.emit('message', {
+								name: 'server',
+								message: `Error: User ${message.split(' ')[1]} does not exist`
+							});
+						}
+						break;
 					case '/key':
 						if (message.split(' ')[1] === process.env.ADMIN) {
 							if (!socket.proto.admin) {
@@ -414,7 +438,7 @@ io.on('connection', (socket) => {
 							}).map(el => sockets[el].proto.name).join(', ').replace(socket.proto.name, '<b>$&</b>')
 						});
 						break;
-					case '/rooms':
+					case '/servers':
 						rooms = occurences(Object.keys(allsockets).map(el => allsockets[el].proto.room));
 						let users = rooms.b;
 						rooms = rooms.a;

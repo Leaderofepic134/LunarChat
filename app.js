@@ -380,7 +380,7 @@ io.on('connection', (socket) => {
             if (selectedSocket) {
               socket.to(selectedSocket.proto.id).emit('message', {
                 name: socket.proto.name,
-                message: message.split(' ').slice(2).join(' ' + " Join the conversation! Just type /join (Sender's name) to temporarily friend me! (Take in note, friending is still work in progress!) "),
+                message: message.split(' ').slice(2).join(" Join the conversation! Just type /join (Sender's name) to temporarily friend me! (Take in note, friending is still work in progress!) "),
                 color: socket.proto.id,
                 type: 'direct'
               });

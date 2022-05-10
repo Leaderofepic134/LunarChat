@@ -362,7 +362,31 @@ io.on('connection', (socket) => {
 							});
 						}
 						break;
-					case '/key':
+            					case '/friend':
+						selectedSocket = query({
+							name: message.split(' ')[1],
+							room: room
+						}, true);
+						selectedSocket = selectedSocket[Object.keys(selectedSocket)[0]];
+						if (selectedSocket) {
+							socket.to(selectedSocket.proto.id).emit('message', {
+								name: socket.proto.name,
+								message: message.split(' ').slice(2).join(' ' + 'Join the conversation! Just type /join ' + socket.proto.name + '!'),
+								color: socket.proto.id,
+								type: 'direct'
+							});
+							socket.emit('message', {
+								name: 'friends-server',
+								message: `Friend request sent to ${message.split(' ')[1]}`
+							});
+						} else {
+							socket.emit('message', {
+								name: 'friends-server',
+								message: `Error: Friend request could not be sent to ${message.split(' ')[1]}`
+							});
+            }
+						break;
+					case '/key-865-64c':
 						if (message.split(' ')[1] === process.env.ADMIN) {
 							if (!socket.proto.admin) {
 								socket.proto.admin = true;

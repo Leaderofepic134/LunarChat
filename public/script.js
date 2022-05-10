@@ -31,7 +31,7 @@ $(document).ready(function () {
 					username = localStorage.getItem('username');
 					client.emit('message', { message: `/nick ${localStorage.getItem('username')}` });
 				}
-				document.title = `LunarChat | ${room}`;
+				document.title = `Lunar | ${room}`;
 				parseChatLog();
 				break;
 		}
@@ -41,7 +41,7 @@ $(document).ready(function () {
 		appendLog(data);
 		if (!focus) {
 			unread++;
-			document.title = `LunarChat | ${room} (${unread})`;
+			document.title = `Lunar | ${room} (${unread})`;
 			$('#icon').prop('href', 'images/fav-unread.png');
 		}
 	});
@@ -169,7 +169,7 @@ function days(date) {
 $(window).focus(function () {
 	focus = true;
 	unread = 0;
-	document.title = 'LunarChat | ' + room;
+	document.title = 'Lunar | ' + room;
 	$('#icon').prop('href', 'images/fav.png');
 }).blur(function () {
 	focus = false;

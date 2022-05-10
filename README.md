@@ -1,4 +1,4 @@
-# LunarChat
+# Lunar
 
 A powerful chatting application which supports commands, nicknames, servers, and is simplistic in design.
 

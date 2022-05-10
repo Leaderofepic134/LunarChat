@@ -12,7 +12,7 @@
         "assets": [
             "public/**/*"
         ],
-        "output": "dist"
+        "output": "dist/"
     },
     "keywords": [],
     "author": "Charon",
@@ -22,7 +22,7 @@
         "cookie-parser": "^1.4.4",
         "dotenv": "^8.2.0",
         "express": "latest",
-        "pkg": "^5.2.2",
+        "pkg": "^5.6.0",
         "socket.io": "2.0.3"
     }
 }

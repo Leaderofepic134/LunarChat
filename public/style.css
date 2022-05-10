@@ -70,7 +70,7 @@ a, a:visited {
 .item.me {
 	/* margin-right: 0;
 	margin-left: auto; */
-	background-color: #9ce4bb;
+	background-color: #000ba3;
 }
 
 .item > p {
@@ -85,7 +85,7 @@ a, a:visited {
 
 .item-name {
 	font-weight: 900;
-	color: rgb(0, 138, 34);
+	color: rgb(255, 0, 200);
 }
 
 .item-name::after {

@@ -12,3 +12,4 @@
 /mute [user]
 /unmute [user]
 /award [user] [award]
+/friend [user] [message] (a message is REQUIRED)
